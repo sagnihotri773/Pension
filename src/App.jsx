@@ -7,7 +7,7 @@ import {
 } from "react-router-dom";
 import "./App.css"; // For root styling
 import Header from "./Components/Header/Header";
-import Welcome from "./Components/Welcome/welcome";
+import Welcome from "./Components/Welcome/Welcome";
 import Dashboard from "./Components/Dashboard/Dashboard";
 import DocumentUpload from "./Components/DocumentUpload/DocumentUpload";
 
