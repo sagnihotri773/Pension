@@ -1,0 +1,20 @@
+name: ovh
+on:
+  push:
+    branches:
+      - pension
+jobs:
+  build-and-deploy:
+    runs-on: project-test
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2       
+      - name: Build and Test
+        run: |
+          docker build . -t test/project:latest
+      - name: Deploy on server
+        run: |
+          # Perform cleanup steps here (e.g., deleting temporary files)
+          docker-compose down
+          docker-compose up -d
