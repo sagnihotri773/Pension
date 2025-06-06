@@ -80,7 +80,10 @@ h2 {
   display: flex;
   align-items: center;
 }
-
+.document-dropdown{
+  width: 100%;
+    padding: 10px 5px;
+}
 .input-with-button input,
 .input-with-dropdown input,
 .input-with-search input {

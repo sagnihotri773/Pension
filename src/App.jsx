@@ -10,21 +10,22 @@ import Header from "./Components/Header/Header";
 import Welcome from "./Components/Welcome/Welcome";
 import Dashboard from "./Components/Dashboard/Dashboard";
 import DocumentUpload from "./Components/DocumentUpload/DocumentUpload";
-
+import MainLayout from "./Layouts/MainLayout";
+import FileUploaderForm from "./Components/FileUploader/FileUploaderForm";
 
 function App() {
   return (
     <Router>
       <div className="app-root">
-        <Header />
-        <main>
-          <Routes>
+        <Routes>
+          <Route element={<MainLayout />}>
             <Route path="/" element={<Welcome />} />
             <Route path="/dashboard" element={<Dashboard />} />
-            <Route path="/document-upload" element={<DocumentUpload />} />
             <Route path="*" element={<Navigate to="/" />} />
-          </Routes>
-        </main>
+          </Route>
+          <Route path="/document-upload" element={<DocumentUpload />} />
+          {/* <Route path="/document-upload" element={<FileUploaderForm />} /> */}
+        </Routes>
       </div>
     </Router>
   );
