@@ -12,7 +12,10 @@
     text-align: left;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   }
-  
+ .card.welcome {
+    width: 359px;
+    text-align: center;
+}
   .card h2 {
     color: #035087;
     margin-bottom: 0.5rem;

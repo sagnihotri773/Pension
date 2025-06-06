@@ -22,16 +22,16 @@
   
   .title-container h1 {
     margin: 0;
-    font-size: 1.8em;
-    color: #035087;
-    font-weight: 400;
+    font-size: 30px;
+    color: #333333;
+    font-weight: 600;
   }
   
   .title-container .agency-tag {
     margin: 0;
     margin-top: 4px;
-    font-size: 0.9em;
-    color: #035087;
+    font-size: 16px;
+    color: #4d4d4d;
     text-transform: uppercase;
   }
   

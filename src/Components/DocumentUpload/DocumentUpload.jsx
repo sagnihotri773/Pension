@@ -177,16 +177,50 @@ const DocumentUpload = () => {
         <div className="selected-files-section">
           <h3 className="subsection-title">Selected File/s</h3>
           <div className="file-list-container">
-            {selectedFiles.length === 0 ? (
+            {selectedFiles?.length === 0 ? (
               <p className="no-files">No files selected</p>
             ) : (
-              <ul className="selected-files-list">
-                {selectedFiles.map((file, idx) => (
-                  <li key={idx}>
-                    {file.name} ({(file.size / 1024 / 1024).toFixed(2)} MB)
-                  </li>
-                ))}
-              </ul>
+              <div class="file-container">
+                {
+                  selectedFiles.map((file, idx) => (
+                    <div class="file-item" key={idx}>
+                      <div class="file-content">
+                        <div class="file-icon ts">
+                          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                              d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z">
+                            </path>
+                          </svg>
+                        </div>
+                        <div class="file-details">
+                          <h3>{file.name}</h3>
+                          <p>({(file.size / 1024 / 1024).toFixed(2)} MB)</p>
+                        </div>
+                      </div>
+                      <button class="remove-btn">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M6 18L18 6M6 6l12 12"></path>
+                        </svg>
+                      </button>
+                    </div>
+
+
+                  ))
+                }
+              </div>
+
+
+
+              // <ul className="selected-files-list">
+              //   {selectedFiles.map((file, idx) => (
+              //     <li key={idx}>
+              //       {file.name} ({(file.size / 1024 / 1024).toFixed(2)} MB)
+              //     </li>
+              //   ))}
+              // </ul>
+
+
             )}
           </div>
           <div className="submit-button-container">
@@ -196,7 +230,7 @@ const DocumentUpload = () => {
           </div>
         </div>
       </div>
-    </div>
+    </div >
   );
 };
 

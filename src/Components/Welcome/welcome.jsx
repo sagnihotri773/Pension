@@ -11,7 +11,7 @@ function Welcome() {
 
   return (
     <div className="login-card-container">
-      <div className="card">
+      <div className="card welcome">
         <h2>Welcome to Pension Plan Data Management</h2>
         <button onClick={goToLogin} className="login-btn">
           Sign in

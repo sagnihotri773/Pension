@@ -1,5 +1,5 @@
 .card {
-  width: 250px;
+  width: 220px;
   height: 250px;
   border: 1px solid #ddd;
   border-radius: 12px;
@@ -43,4 +43,9 @@
 
 .card-title:hover {
   background-color: #023c6a;
+}
+@media(max-width:1199px){
+  .card {
+    width: 200px;
+}
 }
