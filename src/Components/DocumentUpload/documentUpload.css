@@ -1,11 +1,12 @@
 .document-upload-container {
   max-width: 1200px;
   margin: 0 auto;
-  min-height: calc(100vh - 120px);
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 20px;
+  border: 3px solid #035087;
+  /* height: 100vh; */
 }
 
 h2 {
@@ -30,14 +31,17 @@ h2 {
 .selected-files-section {
   flex: 1;
   min-width: 300px;
-  border: 1px solid #dcdcdc;
+  border: 2px solid #035087;
   border-radius: 8px;
-  padding: 25px;
+  padding: 12px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
   display: flex;
   flex-direction: column;
 }
-
+.back-arrow {
+  color: #035087;
+  cursor: pointer;
+}
 .subsection-title {
   color: #035087;
   margin-bottom: 20px;
@@ -58,8 +62,8 @@ h2 {
   font-weight: 500;
 }
 
-.form-group input[type="text"],
-.form-group input[type="file"] {
+.form-group input[type='text'],
+.form-group input[type='file'] {
   padding: 9px 10px 10px 10px;
   border: 1px solid #ccc;
   font-size: 1em;
@@ -67,8 +71,8 @@ h2 {
   background: transparent;
 }
 
-.form-group input[type="text"]:focus,
-.form-group input[type="file"]:focus {
+.form-group input[type='text']:focus,
+.form-group input[type='file']:focus {
   outline: none;
   border-color: #007bff;
   box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
@@ -80,9 +84,9 @@ h2 {
   display: flex;
   align-items: center;
 }
-.document-dropdown{
+.document-dropdown {
   width: 100%;
-    padding: 10px 5px;
+  padding: 10px 5px;
 }
 .input-with-button input,
 .input-with-dropdown input,
@@ -134,7 +138,7 @@ h2 {
   align-items: center;
 }
 
-.checkbox-group input[type="checkbox"] {
+.checkbox-group input[type='checkbox'] {
   margin-right: 10px;
 }
 
@@ -142,7 +146,7 @@ h2 {
   display: flex;
   gap: 10px;
   margin-top: 10px;
-  justify-content: end;
+  justify-content: space-between;
 }
 
 .action-button {
@@ -153,7 +157,11 @@ h2 {
   cursor: pointer;
   transition: background 0.2s;
 }
+.submit {
+  margin: 13px 0px;
+  width: 150px;
 
+background-color: #035087;}
 .action-button.upload {
   background-color: #035087;
   color: #fff;
@@ -164,7 +172,7 @@ h2 {
 }
 
 .action-button.reset {
-  background-color: #035087;
+  background-color: #939596;
   color: #fff;
 }
 
@@ -202,7 +210,7 @@ h2 {
 
 .submit-button-container {
   margin-top: 20px;
-  text-align: center;
+  text-align: right;
 }
 
 .submit-button {
@@ -230,14 +238,19 @@ h2 {
 }
 
 .file-item {
-  display: flex;
+  /* display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-between; */
   padding: 10px;
   border-bottom: 1px solid #f3f4f6;
   background-color: #efefef;
   margin-bottom: 10px;
   border-radius: 4px;
+}
+.files{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .file-item:last-of-type {
@@ -275,9 +288,11 @@ h2 {
   font-size: 0.875rem;
   font-weight: 500;
   color: #374151;
-  margin-bottom: 0.125rem;
 }
-
+.file-size{
+ text-align: right;
+ margin-top: 0px;
+}
 .file-details p {
   font-size: 0.75rem;
   color: #6b7280;
@@ -307,8 +322,9 @@ h2 {
   padding: 0.75rem;
   background-color: #f9fafb;
   font-size: 0.875rem;
-  font-weight: 500;
-  color: #374151;
+  
+      color: #035087;
+    font-weight: 800;
 }
 
 /* Responsive */
