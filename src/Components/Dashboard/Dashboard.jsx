@@ -15,10 +15,13 @@ function Dashboard() {
     }
   };
 
+    const handleNavigate = () => {
+    navigate("/");
+  };
   return (
     <div className="dashboard-section">
       <h2>Pension Plan Data Management</h2>
-      <span className="back-arrow">
+      <span className="back-arrow" onClick={() => handleNavigate()} >
         {" "}
         <svg
           xmlns="http://www.w3.org/2000/svg"

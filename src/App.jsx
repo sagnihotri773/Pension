@@ -9,7 +9,7 @@ import "./App.css"; // For root styling
 import Header from "./Components/Header/Header";
 import Welcome from "./Components/Welcome/Welcome";
 import Dashboard from "./Components/Dashboard/Dashboard";
-import DocumentUpload from "./Components/DocumentUpload/DocumentUpload";
+import DocumentUpload from "./Components/DocumentUpload/index";
 import MainLayout from "./Layouts/MainLayout";
 import FileUploaderForm from "./Components/FileUploader/FileUploaderForm";
 
