@@ -59,17 +59,17 @@
 }
 
 .info-modal-type-success {
-  background-color: #0f5132 !important;
+  background-color: #15b76b !important;
   color: #d1e7dd;
 }
 
 .info-modal-type-error {
-  background-color: #842029 !important;
+  background-color: #cb313e !important;
   color: #f8d7da;
 }
 
 .info-modal-type-warning {
-  background-color: #c69b18 !important;
+  background-color: #ff8222 !important;
   color: #fff3cd;
 }
 
