@@ -361,3 +361,28 @@ h2 {
     gap: 20px;
   }
 }
+
+.no-files {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  text-align: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.no-files-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #777;
+  font-size: 1.2rem;
+}
+
+.folder-css {
+  position: relative;
+  top: 40%;
+}

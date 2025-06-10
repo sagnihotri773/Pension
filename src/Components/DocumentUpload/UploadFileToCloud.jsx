@@ -5,6 +5,7 @@ import ConfirmationPopup from "../../Utils/ConfirmationPopup";
 import axios from "axios";
 import InfoModal from "../../Utils/InfoModal";
 import { toast } from "react-toastify";
+import folderImg from "../../Assets/folder.png";
 
 const UploadFileToCloud = ({
   setSelectedFiles,
@@ -25,7 +26,7 @@ const UploadFileToCloud = ({
   const [showModal, setShowModal] = useState(false);
   const [loading, setLoading] = useState(false);
   const handleDelete = (index) => {
-    console.log("count!",count);
+    console.log("count!", count);
     setDeleteFileIndex(index);
     setShowDeletePopup(true); // close modal
   };
@@ -183,7 +184,12 @@ const UploadFileToCloud = ({
         <h3 className="subsection-title">Selected File/s</h3>
         <div className="file-list-container">
           {selectedFiles?.length === 0 ? (
-            <p className="no-files">No files selected</p>
+            <div className="folder-css">
+                <div className="no-files-content">
+                  <img src={folderImg} height={40} width={40} alt="No files" />
+                  <span>No files selected</span>
+                </div>
+            </div>
           ) : (
             <div className="file-container">
               {selectedFiles?.map((file, index) => (
