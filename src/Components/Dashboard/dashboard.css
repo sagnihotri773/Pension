@@ -7,7 +7,6 @@
 }
 
 .dashboard-section h2 {
-  margin-top: 3%;
   color: #035087;
   margin-bottom: 0.5rem;
 }
@@ -21,7 +20,24 @@
   margin: 0 auto;
   justify-items: center;
 }
-
+.back-arrow-container {
+  display: flex;
+  align-items: center;
+  background-color: #035087;
+  color: white;
+  width: 70px;
+  border-radius: 8px;
+  padding: 0px;
+  line-height: 0px;
+  height: 30px;
+}
+.top-heading {
+  display: flex;
+  justify-content: start;
+  width: 100%;
+  align-items: center;
+  cursor: pointer;
+}
 @media (max-width: 768px) {
   .cards-container {
     grid-template-columns: 1fr;

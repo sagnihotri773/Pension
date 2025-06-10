@@ -16,6 +16,7 @@ const FileUploadForm = ({
   const [documentName, setDocumentName] = useState("");
   const [ocrNeeded, setOcrNeeded] = useState(false);
   const [planId, setPlanId] = useState("");
+  const [planName, setPlanName] = useState("");
   const [participantId, setParticipantId] = useState("");
   const [selectedFileName, setSelectedFileName] = useState("");
   const dispatch = useDispatch();
@@ -141,7 +142,8 @@ const FileUploadForm = ({
     documentName &&
     planId &&
     participantId &&
-    selectedFileName;
+    selectedFileName &&
+    setPlanName;
 
   return (
     <>
@@ -219,7 +221,22 @@ const FileUploadForm = ({
             <option value="2">Compliance Form</option>
           </select>
         </div>
-
+        <div className="form-group">
+          <label htmlFor="docType">
+            Plan Name <span className="required-field"> *</span>
+          </label>
+          <select
+            className="document-dropdown"
+            id="docType"
+            value={planName}
+            onChange={(e) => setPlanName(e.target.value)}
+          >
+            <option value="">Select Plan</option>
+            <option value="1">Form 501</option>
+            <option value="2">Form 600</option>
+            <option value="2">Form 701</option>
+          </select>
+        </div>
         <div className="form-group checkbox-group">
           <input
             type="checkbox"

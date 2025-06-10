@@ -109,6 +109,7 @@ const UploadFileToCloud = ({
 
       if (response.status === 201) {
         console.log(`${file.name} uploaded successfully.`);
+        count ++;
         setMessage(
           `All the selected ${uploadedCount}/${totalFilesToUpload} files have been processed to convert to PDF and submitted successfully.`
         );

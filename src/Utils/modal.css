@@ -4,7 +4,7 @@
   top: 30%;
   left: 50%;
   transform: translateX(-50%);
-  margin: 10px 0 0 0 ;
+  margin: 10px 0 0 0;
   width: 300px;
   animation: slideDown 0.4s ease-out;
   z-index: 9999;
@@ -59,22 +59,22 @@
 }
 
 .info-modal-type-success {
-  background-color: #d1e7dd;
-  color: #0f5132;
+  background-color: #0f5132 !important;
+  color: #d1e7dd;
 }
 
 .info-modal-type-error {
-  background-color: #f8d7da;
-  color: #842029;
+  background-color: #842029 !important;
+  color: #f8d7da;
 }
 
 .info-modal-type-warning {
-  background-color: #fff3cd;
-  color: #664d03;
+  background-color: #c69b18 !important;
+  color: #fff3cd;
 }
 
 .info-modal-type-info {
-  background-color: #cfe2ff;
+  background-color: #cfe2ff !important;
   color: #084298;
 }
 

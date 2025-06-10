@@ -48,15 +48,23 @@ function InfoModal({ show, type = "info", title, message, onClose }) {
       dialogClassName="info-modal-top-center"
       centered={false}
     >
-      <Modal.Header className={config.labelClass} closeButton> 
+      <Modal.Header className={config.labelClass}>
         <Modal.Title className="d-flex align-items-center gap-2">
           {config.icon}
           {title || config.title}
         </Modal.Title>
       </Modal.Header>
-      <Modal.Body>{message || "Something happened."}</Modal.Body>
+      <Modal.Body>
+        {" "}
+        {config.icon} &nbsp;
+        {message || "Something happened."}
+      </Modal.Body>
       <Modal.Footer>
-        <Button variant={config.variant} onClick={onClose}>
+        <Button
+          className={config.labelClass}
+          variant={config.variant}
+          onClick={onClose}
+        >
           OK
         </Button>
       </Modal.Footer>
