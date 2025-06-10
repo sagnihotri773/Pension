@@ -101,7 +101,7 @@ console.log("uploadedFiles",uploadedFiles);
           />{" "}
           OCR Needed?
         </label>
-        <br />
+        {/* <br /> */}
         <br />
         <input
           type="text"

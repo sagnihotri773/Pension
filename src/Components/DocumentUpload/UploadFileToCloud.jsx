@@ -4,6 +4,7 @@ import { useSelector } from "react-redux";
 import ConfirmationPopup from "../../Utils/ConfirmationPopup";
 import axios from "axios";
 import InfoModal from "../../Utils/InfoModal";
+import { toast } from "react-toastify";
 
 const UploadFileToCloud = ({
   setSelectedFiles,
@@ -12,6 +13,7 @@ const UploadFileToCloud = ({
   totalFileSizeMB,
   setTotalFileSizeMB,
 }) => {
+  var count = 0;
   const [showDeletePopup, setShowDeletePopup] = useState(false);
   const [uploadedFile, setUploadedFile] = useState([]);
   const [deleteFileIndex, setDeleteFileIndex] = useState();
@@ -23,11 +25,11 @@ const UploadFileToCloud = ({
   const [showModal, setShowModal] = useState(false);
   const [loading, setLoading] = useState(false);
   const handleDelete = (index) => {
-    console.log("Item deleted!");
+    console.log("count!",count);
     setDeleteFileIndex(index);
     setShowDeletePopup(true); // close modal
   };
-
+  const totalFilesToUpload = selectedFiles?.length || 0;
   const handleCancel = () => {
     setShowDeletePopup(false); // just close
   };
@@ -106,12 +108,15 @@ const UploadFileToCloud = ({
 
       if (response.status === 201) {
         console.log(`${file.name} uploaded successfully.`);
-        setMessage("All files uploaded successfully.");
+        setMessage(
+          `All the selected ${uploadedCount}/${totalFilesToUpload} files have been processed to convert to PDF and submitted successfully.`
+        );
         setMessageType("success");
         setShowModal(true);
         setSelectedFiles([]);
         setLoading(false);
         setTotalFileSizeMB(0);
+        setUploadedCount(count);
         // increment uploaded count or state
       } else {
         console.error(
@@ -133,7 +138,13 @@ const UploadFileToCloud = ({
   };
 
   const handleSubmit = async () => {
+    if (loading) {
+      return;
+    }
     if (!selectedFiles.length) {
+      setMessage("No files to upload.");
+      setMessageType("warning");
+      setShowModal(true);
       toast.warn("No files to upload.");
       return;
     }
@@ -148,11 +159,12 @@ const UploadFileToCloud = ({
     }
 
     setIsUploading(true);
-    setUploadedCount(0);
+    // setUploadedCount(0); 
     setFailedCount(0);
 
     for (const file of selectedFiles) {
       await uploadFileToBlob(file);
+      count++;
       checkIfAllCompleted();
     }
     // setSelectedFiles([]);
@@ -198,23 +210,25 @@ const UploadFileToCloud = ({
                         </div>
                       </div>
 
-                      <button
-                        className="remove-btn"
-                        onClick={() => handleDelete(index)}
-                      >
-                        <svg
-                          fill="none"
-                          stroke="currentColor"
-                          viewBox="0 0 24 24"
+                      {!loading && (
+                        <button
+                          className="remove-btn"
+                          onClick={() => handleDelete(index)}
                         >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth="2"
-                            d="M6 18L18 6M6 6l12 12"
-                          ></path>
-                        </svg>
-                      </button>
+                          <svg
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth="2"
+                              d="M6 18L18 6M6 6l12 12"
+                            ></path>
+                          </svg>
+                        </button>
+                      )}
                     </div>
                     <div className="queued">
                       <p>{loading ? "Uploading" : "Queued"}</p>
@@ -229,24 +243,24 @@ const UploadFileToCloud = ({
           )}
         </div>
 
-        {selectedFiles?.length > 0 ? (
-          <div className="submit-button-container">
+        <div className="submit-button-container">
+          {selectedFiles?.length > 0 ? (
             <p className="total-size">
               Total File Size:
               {totalFileSizeMB.toFixed(2)}
               MB
             </p>
-            <button
-              type="button"
-              className="action-button submit-button"
-              onClick={() => handleSubmit()}
-            >
-              {loading ? "Processing..." : "Submit"}
-            </button>
-          </div>
-        ) : (
-          ""
-        )}
+          ) : (
+            <div></div>
+          )}
+          <button
+            type="button"
+            className="action-button submit-button"
+            onClick={() => handleSubmit()}
+          >
+            {loading ? "Processing..." : "Submit"}
+          </button>
+        </div>
       </div>
 
       {showDeletePopup && (

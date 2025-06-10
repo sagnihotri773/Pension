@@ -197,9 +197,10 @@ const FileUploadForm = ({
             onChange={(e) => setDocumentCategory(e.target.value)}
           >
             <option value="">Select Category</option>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
+            <option value="1">Retirement Plans</option>
+            <option value="2">
+              Pension Benefit Guranty Corporation (PBGC) Filings
+            </option>
           </select>
         </div>
 
@@ -214,9 +215,8 @@ const FileUploadForm = ({
             onChange={(e) => setDocumentType(e.target.value)}
           >
             <option value="">Select Type</option>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
+            <option value="1">Government Filing</option>
+            <option value="2">Compliance Form</option>
           </select>
         </div>
 
@@ -227,9 +227,7 @@ const FileUploadForm = ({
             checked={ocrNeeded}
             onChange={() => setOcrNeeded(!ocrNeeded)}
           />
-          <label htmlFor="ocrNeeded">
-            OCR Needed? <span className="required-field"> *</span>
-          </label>
+          <label htmlFor="ocrNeeded">OCR Needed?</label>
         </div>
 
         <div className="form-group">

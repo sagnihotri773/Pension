@@ -1,27 +1,33 @@
-import React from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./dashboard.css";
 import Card from "../Card/Card";
+import InfoModal from "../../Utils/InfoModal";
 
 function Dashboard() {
   const navigate = useNavigate();
-
+  const [message, setMessage] = useState("");
+  const [messageType, setMessageType] = useState("");
+  const [showModal, setShowModal] = useState(false);
   const onCardClick = (cardName) => {
     console.log(`${cardName} card clicked!`);
     if (cardName === "Document Upload") {
       navigate("/document-upload");
     } else {
-      alert(`Clicked: ${cardName}. Routing not implemented yet.`);
+      setMessage(`Clicked: ${cardName}. Routing not implemented yet.`);
+      setMessageType("warning");
+      setShowModal(true);
+      // alert(`Clicked: ${cardName}. Routing not implemented yet.`);
     }
   };
 
-    const handleNavigate = () => {
+  const handleNavigate = () => {
     navigate("/");
   };
   return (
     <div className="dashboard-section">
       <h2>Pension Plan Data Management</h2>
-      <span className="back-arrow" onClick={() => handleNavigate()} >
+      <span className="back-arrow" onClick={() => handleNavigate()}>
         {" "}
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -55,6 +61,12 @@ function Dashboard() {
         />
         <Card iconName="admin" cardTitle="Admin" onCardClick={onCardClick} />
       </div>
+      <InfoModal
+        show={showModal}
+        type={messageType}
+        message={message}
+        onClose={() => setShowModal(false)}
+      />
     </div>
   );
 }

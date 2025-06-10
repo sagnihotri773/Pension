@@ -1,28 +1,32 @@
+body {
+  font-size: 11px;
+}
 .document-upload-container {
   max-width: 1200px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 20px;
+  padding: 19px;
   border: 3px solid #035087;
   /* height: 100vh; */
 }
 
 h2 {
   color: #035087;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.1rem;
 }
 
 .section-title {
   color: #035087;
-  margin-bottom: 1.5rem;
+  margin-bottom: 15px;
+  margin-top: 0;
 }
 
 .content-wrapper {
   display: flex;
   width: 100%;
-  gap: 30px;
+  gap: 20px;
   flex-wrap: wrap;
   justify-content: center;
 }
@@ -42,15 +46,16 @@ h2 {
   color: #035087;
   cursor: pointer;
 }
+/* .document-upload-container h2{margin-top: 0;} */
 .subsection-title {
   color: #035087;
-  margin-bottom: 20px;
-  padding-bottom: 10px;
+  /* margin-bottom: 10px; */
+  /* padding-bottom: 5px; */
   border-bottom: 1px solid #eee;
 }
 
 .form-group {
-  margin-bottom: 18px;
+  /* margin-bottom: 18px; */
   display: flex;
   flex-direction: column;
 }
@@ -58,13 +63,14 @@ h2 {
 .form-group label {
   font-size: 0.95em;
   color: #555;
-  margin-bottom: 6px;
+  margin-bottom: 2px;
   font-weight: 500;
+  margin-top: 5px;
 }
 
 .form-group input[type='text'],
 .form-group input[type='file'] {
-  padding: 9px 10px 10px 10px;
+  padding: 6px 10px;
   border: 1px solid #ccc;
   font-size: 1em;
   color: #333;
@@ -100,7 +106,7 @@ h2 {
 .input-with-button button,
 .input-with-dropdown .dropdown-arrow,
 .input-with-search button {
-  padding: 10px 15px;
+  padding: 6px 15px;
   border: 1px solid #035087;
   background-color: #035087;
   color: white;
@@ -293,6 +299,7 @@ h2 {
   font-size: 0.875rem;
   font-weight: 500;
   color: #374151;
+  margin: 0;
 }
 .file-size {
   text-align: right;
@@ -335,6 +342,7 @@ h2 {
   justify-content: space-between;
   align-items: center;
 }
+.queued p{margin: 0;}
 
 .disabled {
   background-color: #cccccc !important;
