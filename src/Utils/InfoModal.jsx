@@ -48,8 +48,8 @@ function InfoModal({ show, type = "info", title, message, onClose }) {
       dialogClassName="info-modal-top-center"
       centered={false}
     >
-      <Modal.Header>
-        <Modal.Title>
+      <Modal.Header className={config.labelClass} closeButton> 
+        <Modal.Title className="d-flex align-items-center gap-2">
           {config.icon}
           {title || config.title}
         </Modal.Title>

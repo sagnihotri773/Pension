@@ -1,7 +1,7 @@
 /* InfoModal.css */
 .info-modal-top-center {
   position: fixed;
-  top: 10px;
+  top: 30%;
   left: 50%;
   transform: translateX(-50%);
   margin: 10px 0 0 0 ;

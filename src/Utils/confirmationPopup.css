@@ -42,7 +42,7 @@
 }
 
 .btn-custom-confirm {
-  background-color: #335087; /* red */
+  background-color: #335087; 
   color: white;
   border: none;
 }
@@ -52,7 +52,7 @@
 }
 
 .btn-custom-cancel {
-  background-color: #6c757d; /* gray */
+  background-color: #6c757d; 
   color: white;
   border: none;
 }
@@ -70,4 +70,59 @@
     opacity: 1;
     transform: translateX(-50%) translateY(0);
   }
+}
+
+
+/* modal.css */
+
+.info-modal-top-center .modal-dialog {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -30%);
+  width: 400px;
+  max-width: 90%;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.modal-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: bold;
+  color: white;
+  border-bottom: none;
+}
+
+.info-modal-type-success .modal-header {
+  background-color: #28a745; /* Green */
+}
+
+.info-modal-type-error .modal-header {
+  background-color: #dc3545; /* Red */
+}
+
+.info-modal-type-info .modal-header {
+  background-color: #007bff; /* Blue */
+}
+
+.info-modal-type-warning .modal-header {
+  background-color: #fd7e14; /* Orange */
+}
+
+.modal-body {
+  font-size: 16px;
+  padding: 20px;
+  background-color: #fff;
+}
+
+.modal-footer {
+  background-color: #fff;
+  border-top: none;
+  padding: 10px 20px;
+}
+
+.modal-footer .btn {
+  min-width: 80px;
 }
