@@ -7,7 +7,7 @@ import {
   BsInfoCircle,
   BsExclamationTriangle,
 } from "react-icons/bs";
-import "./modal.css";
+import "./modal.css";   
 import { CloseIconSvg } from "./Svg";
 
 const typeConfig = {
