@@ -78,7 +78,7 @@ function InfoModal({ show, type = "info", title, message, onClose }) {
         >
           OK
         </Button>
-      </Modal.Footer>
+      </Modal.Footer>  
     </Modal>
   );
 }
